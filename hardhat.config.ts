@@ -6,7 +6,16 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.20",
+  solidity: {
+    compilers: [
+      {
+        version: "0.8.20",
+      },
+      {
+        version: "0.8.19"
+      }
+    ]
+  },  
   networks: {
     goerli: {
       url: "https://goerli.infura.io/v3/34a2351fd1f941e2b9f06fcb04438029",
